@@ -59,7 +59,7 @@ class FFDataset(data.Dataset):
         return len(self.train_list)
 
 
-def get_dataset(name = 'train', size=299, root='/data/yike/FF++_std_c40_300frames/', frame_num=300, augment=True):
+def get_dataset(name = 'train', size=299, root='./ff++', frame_num=300, augment=True):
     root = os.path.join(root, name)
     fake_root = os.path.join(root,'fake')
 
@@ -126,7 +126,7 @@ def setup_logger(work_dir=None, logfile_name='log.txt', logger_name='logger'):
     """
     This function sets up a logger to be used throughout. All messages are prefixed by current time and level.
     All messages are outputted to the given logfile, and messages with INFO or above level are
-    also outputted to the console. (Temporarily modified to output everything to console)
+    also outputted to the console.
     NOTE: If logfile_name is empty, logging to file is skipped
     """
 
@@ -141,7 +141,7 @@ def setup_logger(work_dir=None, logfile_name='log.txt', logger_name='logger'):
 
     # Print log message with INFO level or above onto the screen:
     sh = logging.StreamHandler(stream=sys.stdout)
-    sh.setLevel(logging.DEBUG)
+    sh.setLevel(logging.INFO)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
 
