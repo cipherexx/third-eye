@@ -84,7 +84,6 @@ def evaluate(model, data_path, mode='valid'):
     dataset_img = torch.utils.data.ConcatDataset([dataset_real, dataset_fake])
 
     bz = 64
-    torch.cache.empty_cache()
     with torch.no_grad():
         y_true, y_pred = [], []
 
@@ -100,7 +99,10 @@ def evaluate(model, data_path, mode='valid'):
                     label = torch.zeros(img.size(0))
                 else:
                     label = torch.ones(img.size(0))
-                img = img.detach().cuda()
+                #img=img.detach().cuda()
+                device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+                img = img.detach().to(device)
+
                 output = model.forward(img)
                 y_pred.extend(output.sigmoid().flatten().tolist())
                 y_true.extend(label.flatten().tolist())

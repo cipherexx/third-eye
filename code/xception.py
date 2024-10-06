@@ -38,7 +38,6 @@ class SeparableConv2d(nn.Module):
         self.pointwise = nn.Conv2d(in_channels,out_channels,1,1,0,1,1,bias=bias)
 
     def forward(self,x):
-        torch.cuda.empty_cache()
         x = self.conv1(x)
         x = self.pointwise(x)
         return x
