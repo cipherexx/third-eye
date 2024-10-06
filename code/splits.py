@@ -41,7 +41,7 @@ def split_folders(class_folder, subfolder_name):
         
         for folder in val_folders:
             src_folder_path = os.path.join(full_subfolder_path, folder)
-            dest_folder_path = os.path.join(output_path, 'val', class_folder, subfolder_name, folder)
+            dest_folder_path = os.path.join(output_path, 'valid', class_folder, subfolder_name, folder)
             copy_folder(src_folder_path, dest_folder_path)
         
         for folder in test_folders:
