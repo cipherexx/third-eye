@@ -156,7 +156,7 @@ def setup_logger(work_dir=None, logfile_name='log.txt', logger_name='logger'):
     os.makedirs(work_dir, exist_ok=True)
 
     # Save log messages to file:
-    fh = logging.FileHandler(logfile_name, mode="w")
+    fh = logging.FileHandler(logfile_name, mode="a")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(formatter)
     logger.addHandler(fh)
