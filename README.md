@@ -17,7 +17,7 @@ Hyperparameters are in `train.py`.
 | --------------- | --------------------------------------- |
 | dataset_path    | The path of the dataset                 |
 | pretrained_path | The path of pretrained Xception model.  |
-| batch_size      | 128 in paper.                           |
+| batch_size      | Batch size for training                           |
 | max_epoch       | How many epochs to train the model.     |
 | loss_freq       | Print loss after how many iterations    |
 | mode            | Mode of the network                     |
@@ -52,9 +52,7 @@ After preprocessing the data should be organised as below whenever applicable:
 |   |		|	|-- ...
 |   |   	|-- Face2Face
 |   |		|	|-- ...
-|   |   	|-- FaceSwap
-|   |   	|-- NeuralTextures
-|   |-- valid
+|   |-- val
 |   |	|-- real
 |   |	|	|-- ...
 |   |	|-- fake
