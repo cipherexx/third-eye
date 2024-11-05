@@ -3,7 +3,7 @@ import sys
 import time
 import torch
 import torch.nn
-
+from splits import split_data
 from utils import evaluate, get_dataset, FFDataset, setup_logger
 from trainer import Trainer
 import numpy as np
@@ -12,6 +12,8 @@ import random
 # ignoring a future warning about torch.load having RCE (will be fixed by pytorch in the future)
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
+
+split_data()
 
 # config
 dataset_path = './../ff++'
