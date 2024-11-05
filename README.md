@@ -17,18 +17,18 @@ Hyperparameters are in `train.py`.
 | --------------- | --------------------------------------- |
 | dataset_path    | The path of the dataset                 |
 | pretrained_path | The path of pretrained Xception model.  |
-| batch_size      | Batch size for training                           |
+| batch_size      | Batch size for training                 |
 | max_epoch       | How many epochs to train the model.     |
 | loss_freq       | Print loss after how many iterations    |
 | mode            | Mode of the network                     |
 
 #### Load pretrained Xception model
-Download *Xception* model trained on ImageNet (through this [link](http://data.lip6.fr/cadene/pretrainedmodels/xception-b5690688.pth)) or use your own pretrained *Xception*.
-
-Then modify the `pretrained_path`  variable.
+*Xception* model trained on ImageNet ([link](http://data.lip6.fr/cadene/pretrainedmodels/xception-b5690688.pth)) has been used, and is present in the project files as xception.pth
+You can choose to use another pretrained Xception model and modify the `pretrained_path`  variable.
 
 #### Use Face Forensics++ Dataset
 This model has been built to work with the Face Forensics++ Dataset. It is currently coded to only take the Deepfakes and Face2Face folders in account, but this can be changed by adding other methods like FaceSwap and NeuralTextures from FF++ to `fake_list` in `utils.py`
+The version used during the project is present in the ff_raw folder.
 
 After preprocessing the data should be organised as below whenever applicable:
 
@@ -67,7 +67,7 @@ There are four modes supported in F3-Net​.
 
 | Mode(string)       |                                                              |
 | ------------------ | -------------------------------------------------------      |
-| 'FAD'              | Only Frequency Aware Image Detection                         |
+| 'FAD'              | Only Frequency Aware Image Decomposition                        |
 | 'LFS'              | Only uses Local Frequency Statistics                         |
 | 'Both'             | Use both of branches and concatenates before classification. |
 | 'Mix' | Uses a cross attention model to combine the results of FAD and LFS        |
