@@ -3,7 +3,7 @@
 This model is made to implement F3-Net and is not the official implementation. To know about F3-Net, go through the [paper](https://arxiv.org/abs/2007.09355) here.
 
 ## Dependencies
-Requires PyTorch, Torchvision, Numpy, SKLearn and Pillow. 
+Requires PyTorch, Torchvision, Numpy, SKLearn Pillow, Gradio and email-validation(this is needed purely for gradio to function properly). 
 Simply run
 `pip install requirements.txt`
 
@@ -76,6 +76,10 @@ There are four modes supported in F3-Net​.
 ## Running
 To train the model, run
 `python train.py`
+
+Once the model is trained and saved as end.pkl in ckpts, run
+`python infer.py`
+to run a gradio powered inference where you can upload images and determine whether or not they are deepfakes. Ensure the images used have a full face at their centre.
 
 ## Reference
 
