@@ -3,3 +3,5 @@ torchvision
 numpy
 scikit-learn
 Pillow
+gradio
+email-validator
