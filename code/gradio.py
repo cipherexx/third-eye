@@ -1,3 +1,7 @@
+'''
+This script is for the purpose of running a gradio powered inference on your local machine
+'''
+
 import torch
 import gradio as gr
 from PIL import Image
