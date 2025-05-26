@@ -2,6 +2,10 @@
 ## Implementation of F3-Net: Frequency in Face Forgery Network
 This model is made to implement F3-Net and is not the official implementation. To know about F3-Net, go through the [paper](https://arxiv.org/abs/2007.09355) here.
 
+##Deployment Note:
+We have a deployed version of the model up at https://third-eye-by-mihir.streamlit.app/
+This is currently a much lighter version and transforms every image to 32x32 before checking and is trained on facial as well as non facial data. We shall soon switch to the original model that this code trains, on the demo as well!
+
 ## Dependencies
 Requires PyTorch, Torchvision, Numpy, SKLearn Pillow, Gradio and email-validation(this is needed purely for gradio to function properly). 
 Simply run
@@ -78,8 +82,11 @@ To train the model, run
 `python train.py`
 
 Once the model is trained and saved as end.pkl in ckpts, run
-`python infer.py`
+`python gradio.py`
 to run a gradio powered inference where you can upload images and determine whether or not they are deepfakes. Ensure the images used have a full face at their centre.
+
+We also have a live demo up at https://third-eye-by-mihir.streamlit.app/
+Note that this is running a much lighter model, which resizes every image to 32x32 before checking it. We shall soon switch to the full-sized model on the demo as well.
 
 ## Reference
 
