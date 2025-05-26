@@ -2,7 +2,7 @@
 ## Implementation of F3-Net: Frequency in Face Forgery Network
 This model is made to implement F3-Net and is not the official implementation. To know about F3-Net, go through the [paper](https://arxiv.org/abs/2007.09355) here.
 
-##Deployment Note:
+## Deployment Note:
 We have a deployed version of the model up at https://third-eye-by-mihir.streamlit.app/
 This is currently a much lighter version and transforms every image to 32x32 before checking and is trained on facial as well as non facial data. We shall soon switch to the original model that this code trains, on the demo as well!
 
