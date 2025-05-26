@@ -12,7 +12,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 @st.cache_resource
 def load_model(path="./ckpts/end.pkl"):
-    model = torch.load(path, map_location=device)
+    model = torch.load(path, map_location=device, weights_only=False)
     model.to(device).eval()
     return model
 
