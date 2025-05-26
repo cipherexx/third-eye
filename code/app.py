@@ -22,8 +22,8 @@ model = load_model()
 
 def preprocess_image(image: Image.Image):
     transform = transforms.Compose([
-        transforms.Resize((333, 333)),
-        transforms.CenterCrop(299),
+        transforms.Resize((40,40)),
+        transforms.CenterCrop(32),
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5]*3, std=[0.5]*3),
     ])
