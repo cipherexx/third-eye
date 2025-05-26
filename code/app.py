@@ -7,12 +7,14 @@ from PIL import Image
 from torchvision import transforms
 import streamlit as st
 
-
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# Force CPU for Streamlit Cloud compatibility
+device = torch.device("cpu")
 
 @st.cache_resource
 def load_model(path="./ckpts/end.pkl"):
-    model = torch.load(path, map_location=device, weights_only=False)
+    model = torch.load(path, map_location="cpu", weights_only=False)
+    if isinstance(model, torch.nn.DataParallel):
+        model = model.module
     model.to(device).eval()
     return model
 
@@ -38,12 +40,11 @@ def predict(image: Image.Image):
     prob = torch.sigmoid(logits).item()
     return "Fake" if prob > 0.5 else "Real"
 
-
 st.title("Third-Eye : Frequency-Aware Deepfake Identification")
 uploaded = st.file_uploader("Upload an image", type=["jpg","jpeg","png"])
 if uploaded:
     img = Image.open(uploaded).convert("RGB")
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+    st.image(img, caption="Uploaded Image", use_container_width=True)
     if st.button("Classify"):
         label = predict(img)
         st.subheader(f"Prediction: {label}")
