@@ -1,6 +1,7 @@
 # Third-Eye
 ## Implementation of F3-Net: Frequency in Face Forgery Network
 This model is made to implement F3-Net and is not the official implementation. To know about F3-Net, go through the [paper](https://arxiv.org/abs/2007.09355) here.
+It was a part of the author(Mihir Birani)'s course project for the course DA241M (Statistical Foundations of Data Science) at IIT Guwahati, under Dr. Teena Sharma. 
 
 ## Deployment Note:
 We have a deployed version of the model up at https://third-eye-by-mihir.streamlit.app/
